@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complaint Submission System</title>
-    
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    
+
     <style>
         * {
             margin: 0;
@@ -105,8 +106,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .form-group {
@@ -228,7 +236,7 @@
             font-weight: 500;
         }
 
-        .priority-option input:checked + .priority-label {
+        .priority-option input:checked+.priority-label {
             border-color: var(--primary-color);
             background: var(--primary-color);
             color: var(--white);
@@ -347,8 +355,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .success-message {
@@ -403,8 +416,15 @@
         }
 
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .faq-item {
@@ -519,6 +539,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -575,13 +596,16 @@
 
                     <div class="form-group">
                         <label>Subject/Title <span class="required">*</span></label>
-                        <input type="text" id="subject" name="subject" placeholder="Brief summary of your complaint" required>
+                        <input type="text" id="subject" name="subject" placeholder="Brief summary of your complaint"
+                            required>
                         <div class="error-message" id="subjectError">Please enter a subject</div>
                     </div>
 
                     <div class="form-group">
                         <label>Detailed Description <span class="required">*</span></label>
-                        <textarea id="description" name="description" placeholder="Please describe your complaint in detail..." required minlength="20"></textarea>
+                        <textarea id="description" name="description"
+                            placeholder="Please describe your complaint in detail..." required
+                            minlength="20"></textarea>
                         <div class="char-counter">
                             <span id="charCount">0</span> / 1000 characters (minimum 20)
                         </div>
@@ -662,7 +686,7 @@
                     <div class="success-icon">✓</div>
                     <h2>Complaint Submitted Successfully!</h2>
                     <p>Thank you for reaching out to us. We take your concerns seriously.</p>
-                    
+
                     <div class="reference-number">
                         <p>Your Reference Number:</p>
                         <strong id="refNumber"></strong>
@@ -693,7 +717,7 @@
                     <p style="margin-bottom: 20px; color: var(--text-light);">
                         Enter your reference number to check the status of your complaint
                     </p>
-                    
+
                     <div class="form-group">
                         <label>Reference Number</label>
                         <input type="text" id="trackingNumber" placeholder="e.g., CMP-2026-XXXXX">
@@ -708,12 +732,14 @@
                     <h3>Complaint Details</h3>
                     <div style="background: var(--bg-light); padding: 20px; border-radius: 8px; margin-top: 20px;">
                         <p><strong>Reference Number:</strong> <span id="trackRefNum"></span></p>
-                        <p style="margin-top: 10px;"><strong>Status:</strong> <span class="status-badge status-processing">Under Review</span></p>
+                        <p style="margin-top: 10px;"><strong>Status:</strong> <span
+                                class="status-badge status-processing">Under Review</span></p>
                         <p style="margin-top: 10px;"><strong>Submitted:</strong> <span id="trackDate"></span></p>
                         <p style="margin-top: 10px;"><strong>Category:</strong> <span id="trackCategory"></span></p>
                         <p style="margin-top: 10px;"><strong>Location:</strong> <span id="trackLocation"></span></p>
                         <p style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color);">
-                            Our team is currently reviewing your complaint. You will receive an email update within 24-48 hours.
+                            Our team is currently reviewing your complaint. You will receive an email update within
+                            24-48 hours.
                         </p>
                     </div>
                 </div>
@@ -729,7 +755,8 @@
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Most complaints are reviewed within 24-48 hours. Complex issues may require 3-5 business days for thorough investigation. You will receive email updates throughout the process.</p>
+                        <p>Most complaints are reviewed within 24-48 hours. Complex issues may require 3-5 business days
+                            for thorough investigation. You will receive email updates throughout the process.</p>
                     </div>
                 </div>
 
@@ -739,7 +766,8 @@
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! Use the "Track Status" tab and enter your reference number to check the current status of your complaint at any time.</p>
+                        <p>Yes! Use the "Track Status" tab and enter your reference number to check the current status
+                            of your complaint at any time.</p>
                     </div>
                 </div>
 
@@ -749,7 +777,8 @@
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>The location helps us route your complaint to the appropriate department and enables faster response times. You can click anywhere on the map or use your current location.</p>
+                        <p>The location helps us route your complaint to the appropriate department and enables faster
+                            response times. You can click anywhere on the map or use your current location.</p>
                     </div>
                 </div>
 
@@ -759,7 +788,8 @@
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>You can upload images (JPG, PNG), PDF documents, and Word documents (DOC, DOCX). Each file should be under 5MB in size.</p>
+                        <p>You can upload images (JPG, PNG), PDF documents, and Word documents (DOC, DOCX). Each file
+                            should be under 5MB in size.</p>
                     </div>
                 </div>
 
@@ -769,7 +799,8 @@
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, you will receive an automated confirmation email immediately after submitting your complaint, along with your unique reference number.</p>
+                        <p>Yes, you will receive an automated confirmation email immediately after submitting your
+                            complaint, along with your unique reference number.</p>
                     </div>
                 </div>
 
@@ -779,7 +810,8 @@
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>If you need to add additional information, please contact us with your reference number via email or phone, and we'll update your complaint record.</p>
+                        <p>If you need to add additional information, please contact us with your reference number via
+                            email or phone, and we'll update your complaint record.</p>
                     </div>
                 </div>
 
@@ -789,7 +821,9 @@
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Your complaint is immediately logged in our system and assigned to the appropriate department. Our team will investigate the issue and contact you with a resolution or request for additional information if needed.</p>
+                        <p>Your complaint is immediately logged in our system and assigned to the appropriate
+                            department. Our team will investigate the issue and contact you with a resolution or request
+                            for additional information if needed.</p>
                     </div>
                 </div>
             </div>
@@ -798,8 +832,19 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <script>
+
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+        import { firebaseConfig } from "./firebase-config.js";
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const analytics = getAnalytics(app);
+
         // Global variables
         let complaintData = {};
         let autoSaveInterval;
@@ -808,7 +853,7 @@
         let selectedLocation = null;
 
         // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             initMap();
             loadDraft();
             setupAutoSave();
@@ -831,7 +876,7 @@
             }).addTo(map);
 
             // Add click event to map
-            map.on('click', function(e) {
+            map.on('click', function (e) {
                 setLocation(e.latlng.lat, e.latlng.lng);
             });
         }
@@ -851,7 +896,7 @@
             }).addTo(map);
 
             // Update marker position on drag
-            marker.on('dragend', function(e) {
+            marker.on('dragend', function (e) {
                 const position = e.target.getLatLng();
                 setLocation(position.lat, position.lng);
             });
@@ -862,7 +907,7 @@
 
             // Show location info
             document.getElementById('locationInfo').style.display = 'block';
-            document.getElementById('locationCoords').textContent = 
+            document.getElementById('locationCoords').textContent =
                 `Latitude: ${lat.toFixed(6)}, Longitude: ${lng.toFixed(6)}`;
 
             // Get address using reverse geocoding (Nominatim)
@@ -879,18 +924,18 @@
                     `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`
                 );
                 const data = await response.json();
-                
+
                 if (data.display_name) {
-                    document.getElementById('locationAddress').textContent = 
+                    document.getElementById('locationAddress').textContent =
                         `Address: ${data.display_name}`;
                     document.getElementById('locationAddress').value = data.display_name;
                 } else {
-                    document.getElementById('locationAddress').textContent = 
+                    document.getElementById('locationAddress').textContent =
                         'Address: Location identified';
                 }
             } catch (error) {
                 console.error('Error getting address:', error);
-                document.getElementById('locationAddress').textContent = 
+                document.getElementById('locationAddress').textContent =
                     'Address: Location coordinates recorded';
             }
         }
@@ -899,14 +944,14 @@
         function getCurrentLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
-                    function(position) {
+                    function (position) {
                         const lat = position.coords.latitude;
                         const lng = position.coords.longitude;
-                        
+
                         map.setView([lat, lng], 16);
                         setLocation(lat, lng);
                     },
-                    function(error) {
+                    function (error) {
                         alert('Unable to get your location. Please click on the map to select a location manually.');
                         console.error('Geolocation error:', error);
                     }
@@ -956,10 +1001,10 @@
             const description = document.getElementById('description');
             const charCount = document.getElementById('charCount');
 
-            description.addEventListener('input', function() {
+            description.addEventListener('input', function () {
                 const count = this.value.length;
                 charCount.textContent = count;
-                
+
                 if (count > 1000) {
                     this.value = this.value.substring(0, 1000);
                     charCount.textContent = 1000;
@@ -972,7 +1017,7 @@
             const fileInput = document.getElementById('fileInput');
             const fileInfo = document.getElementById('fileInfo');
 
-            fileInput.addEventListener('change', function() {
+            fileInput.addEventListener('change', function () {
                 const files = Array.from(this.files);
                 if (files.length === 0) {
                     fileInfo.innerHTML = '';
@@ -1008,7 +1053,7 @@
         function saveDraft() {
             const formData = new FormData(document.getElementById('complaintForm'));
             const draft = {};
-            
+
             for (let [key, value] of formData.entries()) {
                 draft[key] = value;
             }
@@ -1135,7 +1180,7 @@
         }
 
         // Form submission
-        document.getElementById('complaintForm').addEventListener('submit', function(e) {
+        document.getElementById('complaintForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
             if (!validateForm()) {
@@ -1145,7 +1190,7 @@
             // Collect form data
             const formData = new FormData(this);
             complaintData = {};
-            
+
             for (let [key, value] of formData.entries()) {
                 complaintData[key] = value;
             }
@@ -1158,7 +1203,7 @@
 
             // Add timestamp
             complaintData.timestamp = new Date().toISOString();
-            
+
             // Generate reference number
             const refNumber = generateReferenceNumber();
             complaintData.referenceNumber = refNumber;
@@ -1173,25 +1218,41 @@
             }, 2000);
         });
 
-        function submitComplaint() {
-            // Hide loading
-            document.getElementById('loading').classList.remove('show');
+        async function submitComplaint() {
+            try {
+                // Hide loading
+                document.getElementById('loading').classList.remove('show');
 
-            // Store complaint in localStorage
-            const complaints = JSON.parse(localStorage.getItem('complaints') || '[]');
-            complaints.push(complaintData);
-            localStorage.setItem('complaints', JSON.stringify(complaints));
+                // Store complaint in Firestore
+                const complaints = collection(db, 'complaints');
+                const docRef = await addDoc(complaints, {
+                    ...complaintData,
+                    status: 'submitted',
+                    createdAt: new Date(complaintData.timestamp)
+                });
 
-            // Clear draft
-            localStorage.removeItem('complaintDraft');
-            clearInterval(autoSaveInterval);
+                // Also store in localStorage as backup
+                const localComplaints = JSON.parse(localStorage.getItem('complaints') || '[]');
+                localComplaints.push(complaintData);
+                localStorage.setItem('complaints', JSON.stringify(localComplaints));
 
-            // Show success message
-            document.getElementById('refNumber').textContent = complaintData.referenceNumber;
-            document.getElementById('successMessage').classList.add('show');
+                // Clear draft
+                localStorage.removeItem('complaintDraft');
+                clearInterval(autoSaveInterval);
 
-            // Log to console (in real app, this would be sent to server)
-            console.log('Complaint submitted:', complaintData);
+                // Show success message
+                document.getElementById('refNumber').textContent = complaintData.referenceNumber;
+                document.getElementById('successMessage').classList.add('show');
+
+                // Log to console
+                console.log('Complaint submitted to Firestore:', complaintData, 'Document ID:', docRef.id);
+            } catch (error) {
+                console.error('Error submitting complaint to Firestore:', error);
+                alert('Error submitting complaint: ' + error.message);
+                // Show form again on error
+                document.getElementById('complaintForm').style.display = 'block';
+                document.getElementById('loading').classList.remove('show');
+            }
         }
 
         function generateReferenceNumber() {
@@ -1202,7 +1263,7 @@
         }
 
         function downloadComplaint() {
-            const locationText = selectedLocation ? 
+            const locationText = selectedLocation ?
                 `Location: ${complaintData.latitude}, ${complaintData.longitude}\nAddress: ${complaintData.locationAddress || 'N/A'}` :
                 'Location: Not specified';
 
@@ -1270,31 +1331,56 @@ Thank you for your feedback!
         }
 
         // Track complaint
-        function trackComplaint() {
+        async function trackComplaint() {
             const trackingNumber = document.getElementById('trackingNumber').value.trim();
-            
+
             if (!trackingNumber) {
                 alert('Please enter a reference number');
                 return;
             }
 
-            const complaints = JSON.parse(localStorage.getItem('complaints') || '[]');
-            const complaint = complaints.find(c => c.referenceNumber === trackingNumber);
+            try {
+                // First try to find in Firestore
+                const complaints = collection(db, 'complaints');
+                const q = query(complaints, where('referenceNumber', '==', trackingNumber));
+                const querySnapshot = await getDocs(q);
 
-            if (complaint) {
-                document.getElementById('trackRefNum').textContent = complaint.referenceNumber;
-                document.getElementById('trackDate').textContent = new Date(complaint.timestamp).toLocaleString();
-                document.getElementById('trackCategory').textContent = complaint.category;
-                
-                const locationText = complaint.latitude && complaint.longitude ?
-                    `${complaint.latitude}, ${complaint.longitude}` :
-                    'Not specified';
-                document.getElementById('trackLocation').textContent = locationText;
-                
-                document.getElementById('trackingResult').classList.add('show');
-            } else {
-                alert('Complaint not found. Please check your reference number.');
-                document.getElementById('trackingResult').classList.remove('show');
+                if (!querySnapshot.empty) {
+                    const complaint = querySnapshot.docs[0].data();
+                    document.getElementById('trackRefNum').textContent = complaint.referenceNumber;
+                    document.getElementById('trackDate').textContent = new Date(complaint.timestamp).toLocaleString();
+                    document.getElementById('trackCategory').textContent = complaint.category;
+
+                    const locationText = complaint.latitude && complaint.longitude ?
+                        `${complaint.latitude}, ${complaint.longitude}` :
+                        'Not specified';
+                    document.getElementById('trackLocation').textContent = locationText;
+
+                    document.getElementById('trackingResult').classList.add('show');
+                } else {
+                    // Fallback to localStorage
+                    const localComplaints = JSON.parse(localStorage.getItem('complaints') || '[]');
+                    const complaint = localComplaints.find(c => c.referenceNumber === trackingNumber);
+
+                    if (complaint) {
+                        document.getElementById('trackRefNum').textContent = complaint.referenceNumber;
+                        document.getElementById('trackDate').textContent = new Date(complaint.timestamp).toLocaleString();
+                        document.getElementById('trackCategory').textContent = complaint.category;
+
+                        const locationText = complaint.latitude && complaint.longitude ?
+                            `${complaint.latitude}, ${complaint.longitude}` :
+                            'Not specified';
+                        document.getElementById('trackLocation').textContent = locationText;
+
+                        document.getElementById('trackingResult').classList.add('show');
+                    } else {
+                        alert('Complaint not found. Please check your reference number.');
+                        document.getElementById('trackingResult').classList.remove('show');
+                    }
+                }
+            } catch (error) {
+                console.error('Error tracking complaint:', error);
+                alert('Error tracking complaint: ' + error.message);
             }
         }
 
@@ -1302,7 +1388,7 @@ Thank you for your feedback!
         function toggleFaq(element) {
             const faqItem = element.parentElement;
             const isActive = faqItem.classList.contains('active');
-            
+
             // Close all FAQs
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
@@ -1315,4 +1401,5 @@ Thank you for your feedback!
         }
     </script>
 </body>
+
 </html>
